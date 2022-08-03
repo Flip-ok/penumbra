@@ -1,11 +1,5 @@
 #!/bin/bash
 
-while true
-do
-echo "============================================================"
-curl -s https://raw.githubusercontent.com/Flip-ok/penumbra-Arche/main/TurbokomaPenumbradvanol.sh | bash
-echo "============================================================"
-
 PS3='Select an action: '
 options=( "Active" "Passive" )
 select opt in "${options[@]}"
