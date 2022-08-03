@@ -9,7 +9,7 @@ select opt in "${options[@]}"
                do
                    case $opt in
                    
-                   "Prepare the server for installation")
+"Prepare the server for installation")
                echo "============================================================"
                echo "Preparation has begun"
                echo "============================================================"
@@ -30,6 +30,8 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
                echo "============================================================"
                echo "The server is ready!➍➑➏➊-🅒🅡🅔🅦"
                echo "============================================================"
+break
+;;
                    
 "Active")
 
