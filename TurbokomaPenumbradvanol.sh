@@ -11,11 +11,12 @@ select opt in "${options[@]}"
 "Active")
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+$HOME/.cargo/env
 
 cd $HOME/penumbra
 rm -rf penumbra
 git clone https://github.com/penumbra-zone/penumbra
-cd penumbra && git fetch && git checkout 023-arche.1 && cargo update
+git fetch && git checkout 023-arche.1 && cargo update
 cargo build --release --bin pcli
 cargo run --release --bin pcli wallet reset
 
@@ -83,7 +84,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cd $HOME/penumbra
 rm -rf penumbra
 git clone https://github.com/penumbra-zone/penumbra
-cd penumbra && git fetch && git checkout 023-arche.1 && cargo update
+git fetch && git checkout 023-arche.1 && cargo update
 cargo build --release --bin pcli
 cargo run --release --bin pcli wallet reset
 
