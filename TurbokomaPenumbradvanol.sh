@@ -1,5 +1,8 @@
 #!/bin/bash
 
+while true
+do
+
 PS3='Select an action: '
 options=( "Active" "Passive" )
 select opt in "${options[@]}"
