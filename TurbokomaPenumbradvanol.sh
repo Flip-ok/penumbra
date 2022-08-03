@@ -10,9 +10,9 @@ select opt in "${options[@]}"
                    case $opt in
                    
 "Prepare the server for installation")
-               echo "============================================================"
-               echo "Preparation has begun"
-               echo "============================================================"
+               echo -e "============================================================"
+               echo -e "Preparation has begun"
+               echo -e"============================================================"
                
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git clang curl libssl-dev llvm libudev-dev
@@ -27,9 +27,9 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 
 
-               echo "============================================================"
-               echo "The server is ready!4861-🅲🆁🅴🆆"
-               echo "============================================================"
+               echo -e "============================================================"
+               echo -e "The server is ready!4861-🅲🆁🅴🆆"
+               echo -e "============================================================"
                
 break
 ;;
