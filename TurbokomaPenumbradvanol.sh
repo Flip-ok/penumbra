@@ -11,7 +11,7 @@ select opt in "${options[@]}"
 "Active")
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-$HOME/.cargo/env
+source ~/.cargo/env
 
 cd $HOME/penumbra
 rm -rf penumbra
