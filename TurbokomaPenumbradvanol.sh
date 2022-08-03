@@ -18,6 +18,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y git clang curl libssl-dev llvm libudev-dev
 
 curl https://sh.rustup.rs -sSf | sh
+source ~/.profile
 source ~/.cargo/env
 
 rustup default stable
