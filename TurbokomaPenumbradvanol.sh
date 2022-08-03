@@ -1,5 +1,4 @@
 cd $HOME/penumbra
-#!/bin/bash
 rm -rf penumbra
 git clone https://github.com/penumbra-zone/penumbra
 cd penumbra && git fetch && git checkout 023-arche.1 && cargo update
