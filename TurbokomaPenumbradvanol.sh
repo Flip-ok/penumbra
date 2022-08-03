@@ -10,6 +10,8 @@ select opt in "${options[@]}"
                    case $opt in
 "Active")
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 cd $HOME/penumbra
 rm -rf penumbra
 git clone https://github.com/penumbra-zone/penumbra
@@ -74,6 +76,9 @@ break
 ;;
 
 "Passive")
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 
 cd $HOME/penumbra
 rm -rf penumbra
