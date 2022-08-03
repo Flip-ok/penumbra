@@ -7,7 +7,7 @@ curl -s https://raw.githubusercontent.com/Flip-ok/penumbra-Arche/main/TurbokomaP
 echo "============================================================"
 
 PS3='Select an action: '
-options=("Prepare the server for installation" "Active" "Passive" )
+options=( "Active" "Passive" )
 select opt in "${options[@]}"
                do
                    case $opt in
