@@ -12,7 +12,7 @@ select opt in "${options[@]}"
 "Prepare the server for installation")
                echo -e "============================================================"
                echo -e "Preparation has begun"
-               echo -e"============================================================"
+               echo -e "============================================================"
                
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git clang curl libssl-dev llvm libudev-dev
