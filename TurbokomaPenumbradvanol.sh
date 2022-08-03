@@ -4,7 +4,7 @@ while true
 do
 
 PS3='Select an action: '
-options=( "Active" "Passive" "Prepare the server for installation" )
+options=( "Prepare the server for installation" "Active" "Passive" )
 select opt in "${options[@]}"
                do
                    case $opt in
@@ -30,6 +30,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
                echo "============================================================"
                echo "The server is ready!➍➑➏➊-🅒🅡🅔🅦"
                echo "============================================================"
+               
 break
 ;;
                    
