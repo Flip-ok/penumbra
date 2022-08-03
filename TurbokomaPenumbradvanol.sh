@@ -4,14 +4,34 @@ while true
 do
 
 PS3='Select an action: '
-options=( "Active" "Passive" )
+options=( "Active" "Passive" "Prepare the server for installation" )
 select opt in "${options[@]}"
                do
                    case $opt in
-"Active")
+                   
+                   "Prepare the server for installation")
+               echo "============================================================"
+               echo "Preparation has begun"
+               echo "============================================================"
+               
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git clang curl libssl-dev llvm libudev-dev
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-$HOME/.cargo/env
+curl https://sh.rustup.rs -sSf | sh
+source ~/.cargo/env
+
+rustup default stable
+rustup update
+rustup update nightly
+rustup target add wasm32-unknown-unknown --toolchain nightly
+
+
+
+               echo "============================================================"
+               echo "The server is ready!➍➑➏➊-🅒🅡🅔🅦"
+               echo "============================================================"
+                   
+"Active")
 
 cd $HOME/penumbra
 rm -rf penumbra
@@ -39,9 +59,6 @@ break
 ;;
 
 "Passive")
-
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-$HOME/.cargo/env
 
 cd $HOME/penumbra
 rm -rf penumbra
