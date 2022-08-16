@@ -13,11 +13,10 @@ echo "==========================================================================
 
 PS3='Select an action: '
 options=(
-"Install Node"
-"Check Log"
+"Install"
+"Check version"
 "Check balance"
-"Request tokens in discord"
-"Create Validator"
+"checkout 025-helike"
 "Exit")
 select opt in "${options[@]}"
 do
