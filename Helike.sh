@@ -18,7 +18,7 @@ options=(
 "new wallet"
 "Check version"
 "Check balance"
-"Penumbra tobi pizda"
+"penumbra tobi pizda"
 "Exit")
 select opt in "${options[@]}"
 do
@@ -90,7 +90,8 @@ cargo run --quiet --release --bin pcli balance
 break
 ;;
 
-"Penumbra tobi pizda"
+"penumbra tobi pizda"
+
 echo "============================================================"
 echo "Penumbra tobi pizda"
 echo "============================================================"
