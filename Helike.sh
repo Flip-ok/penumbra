@@ -115,6 +115,7 @@ curl -s https://raw.githubusercontent.com/Flip-ok/Logo/main/Logo4861.sh | bash
 echo "========================================================================================================================"
 randomNumber=$(shuf -i 5-10 -n1)
 sleep $randomNumber
+done
 
 break
 ;;
