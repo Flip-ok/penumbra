@@ -14,9 +14,11 @@ echo "==========================================================================
 PS3='Select an action: '
 options=(
 "Install"
+"checkout 025-helike"
+"new wallet"
 "Check version"
 "Check balance"
-"checkout 025-helike"
+"Penumbra tobi pizda"
 "Exit")
 select opt in "${options[@]}"
 do
@@ -47,6 +49,33 @@ source ~/.cargo/env
 break
 ;;
 
+"checkout 025-helike")
+echo "========================================================================================================================"
+cd $HOME/penumbra
+rm -rf penumbra
+git clone https://github.com/penumbra-zone/penumbra
+cd
+cd penumbra && git fetch && git checkout 025-helike && cargo update
+cargo build --release --bin pcli
+cargo run --release --bin pcli wallet reset
+echo "========================================================================================================================"
+
+break
+;;
+
+"new wallet")
+echo "============================================================"
+echo "new wallet"
+echo "============================================================"
+
+cargo run --quiet --release --bin pcli wallet generate
+echo "========================================================================================================================"
+
+break
+;;
+
+
+
 "Check version")
 
 cargo run --release --bin pcli -- --version
@@ -61,17 +90,32 @@ cargo run --quiet --release --bin pcli balance
 break
 ;;
 
+"Penumbra tobi pizda"
+echo "============================================================"
+echo "Penumbra tobi pizda"
+echo "============================================================"
+echo "How many transsanction?"
+echo "============================================================"
+read n
+read -p "Enter address wallet: " w
+echo "============================================================"
+echo "Penumbra transsaction start"
+echo "============================================================"
+function wal(){
+    cargo run --quiet --release --bin pcli tx send 0.004861penumbra --to $w
+}
 
-"checkout 025-helike")
+for n in `seq "$n"`
+do
+wal
+echo "============================================================"
+echo -e  "\n\033[36m $n transsaction complete \033[0m"
 echo "========================================================================================================================"
-cd $HOME/penumbra
-rm -rf penumbra
-git clone https://github.com/penumbra-zone/penumbra
-cd
-cd penumbra && git fetch && git checkout 025-helike && cargo update
-cargo build --release --bin pcli
-cargo run --release --bin pcli wallet reset
+curl -s https://raw.githubusercontent.com/Flip-ok/Logo/main/Logo4861.sh | bash
 echo "========================================================================================================================"
+randomNumber=$(shuf -i 5-10 -n1)
+sleep $randomNumber
+done
 
 break
 ;;
