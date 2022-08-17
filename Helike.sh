@@ -90,7 +90,7 @@ cargo run --quiet --release --bin pcli balance
 break
 ;;
 
-"penumbra-tobi-pizda"
+"penumbra-tobi-pizda")
 echo "============================================================"
 echo "Penumbra tobi pizda"
 echo "============================================================"
