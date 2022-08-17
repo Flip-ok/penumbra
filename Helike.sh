@@ -68,6 +68,7 @@ echo "============================================================"
 echo "new wallet"
 echo "============================================================"
 
+cd penumbra
 cargo run --quiet --release --bin pcli wallet generate
 echo "========================================================================================================================"
 
@@ -78,6 +79,7 @@ break
 
 "Check version")
 
+cd penumbra
 cargo run --release --bin pcli -- --version
 
 break
@@ -85,6 +87,7 @@ break
 
 
 "Check balance")
+cd penumbra
 cargo run --quiet --release --bin pcli balance
 
 break
