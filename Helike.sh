@@ -116,6 +116,9 @@ echo "==========================================================================
 randomNumber=$(shuf -i 5-10 -n1)
 sleep $randomNumber
 
+break
+;;
+
 "Exit")
 exit
 ;;
