@@ -18,7 +18,7 @@ options=(
 "new wallet"
 "Check version"
 "Check balance"
-"penumbra tobi pizda"
+"penumbra-tobi-pizda"
 "Exit")
 select opt in "${options[@]}"
 do
