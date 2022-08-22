@@ -49,7 +49,7 @@ source ~/.cargo/env
 break
 ;;
 
-"checkout 025-helike")
+"checkout 026-hermippe")
 echo "========================================================================================================================"
 cd $HOME/penumbra
 rm -rf penumbra
