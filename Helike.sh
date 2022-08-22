@@ -55,7 +55,7 @@ cd $HOME/penumbra
 rm -rf penumbra
 git clone https://github.com/penumbra-zone/penumbra
 cd
-cd penumbra && git fetch && git checkout 025-helike && cargo update
+cd penumbra && git fetch && git checkout 026-hermippe && cargo update
 cargo build --release --bin pcli
 cargo run --release --bin pcli wallet reset
 echo "========================================================================================================================"
