@@ -14,7 +14,7 @@ echo "==========================================================================
 PS3='Select an action: '
 options=(
 "Install"
-"checkout 025-helike"
+"checkout 026-hermippe"
 "new wallet"
 "Check version"
 "Check balance"
