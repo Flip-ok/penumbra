@@ -1,0 +1,107 @@
+#!/bin/bash
+
+while true
+do
+
+# Logo
+
+echo "========================================================================================================================"
+curl -s https://raw.githubusercontent.com/Flip-ok/Logo/main/Logo4861.sh | bash
+echo "========================================================================================================================"
+
+# Menu
+
+PS3='Select an action: '
+options=(
+"checkout 026-hermippe"
+"new wallet"
+"Check version"
+"Check balance"
+"penumbra-tobi-pizda"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+
+"029-eukelade.2")
+echo "========================================================================================================================"
+cd $HOME/penumbra
+rm -rf penumbra
+git clone https://github.com/penumbra-zone/penumbra
+cd
+cd penumbra && git fetch && git 029-eukelade.2 && cargo update
+cargo build --release --bin pcli
+cargo run --release --bin pcli wallet reset
+echo "========================================================================================================================"
+
+break
+;;
+
+"new wallet")
+echo "============================================================"
+echo "new wallet"
+echo "============================================================"
+
+cd penumbra
+cargo run --quiet --release --bin pcli wallet generate
+echo "========================================================================================================================"
+
+break
+;;
+
+
+
+"Check version")
+
+cd penumbra
+cargo run --release --bin pcli -- --version
+
+break
+;;
+
+
+"Check balance")
+cd penumbra
+cargo run --quiet --release --bin pcli balance
+
+break
+;;
+
+"penumbra-tobi-pizda")
+echo "============================================================"
+echo "Penumbra tobi pizda"
+echo "============================================================"
+echo "How many transsanction?"
+echo "============================================================"
+read n
+read -p "Enter address wallet: " w
+echo "============================================================"
+echo "Penumbra transsaction start"
+echo "============================================================"
+function wal(){
+    cargo run --quiet --release --bin pcli tx send 0.004861penumbra --to $w
+}
+
+for n in `seq "$n"`
+do
+wal
+echo "============================================================"
+echo -e  "\n\033[36m $n transsaction complete \033[0m"
+echo "========================================================================================================================"
+curl -s https://raw.githubusercontent.com/Flip-ok/Logo/main/Logo4861.sh | bash
+echo "========================================================================================================================"
+randomNumber=$(shuf -i 5-10 -n1)
+sleep $randomNumber
+done
+
+break
+;;
+
+"Exit")
+exit
+;;
+*) echo "invalid option $REPLY";;
+esac
+done
+done
